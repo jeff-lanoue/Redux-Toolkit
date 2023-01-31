@@ -23,6 +23,15 @@ const CartContainer = () => {
                     return <CartItem key={item.id} {...item} />;
                 })}
             </div>
+            <footer>
+                <div className="cart-total">
+                    <hr />
+                    <h4>
+                        total <span>${total}</span>
+                    </h4>
+                </div>
+                <button className="btn clear-btn">clear cart</button>
+            </footer>
         </section>
     );
 };
