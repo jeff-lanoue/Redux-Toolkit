@@ -11,8 +11,21 @@ const initialState = {
 const cartSlice = createSlice({
     name: "cart",
     initialState,
+    reducers: {
+        clearCart: (state) => {
+            state.cartItems = [];
+        },
+        removeItem: (state, action) => {
+            const itemId = action.payload;
+            state.cartItems = state.cartItems.filter(
+                (item) => item.id !== itemId
+            );
+        },
+        // https://www.udemy.com/course/react-tutorial-and-projects-course/learn/lecture/31545368#overview
+    },
 });
 
 //console.log(cartSlice);
+export const { clearCart, removeItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
