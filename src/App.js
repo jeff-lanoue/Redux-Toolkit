@@ -16,7 +16,7 @@ function App() {
     }, [cartItems]);
 
     useEffect(() => {
-        dispatch(getCartItems());
+        dispatch(getCartItems("how to pass data"));
     }, []);
 
     if (isLoading) {
